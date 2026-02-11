@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математический Тренажер</title>
+    
+    <!-- Подключаем KaTeX для отображения условий -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+    <!-- Подключаем MathLive для ввода формул -->
+    <script defer src="https://unpkg.com/mathlive"></script>
+
+    <!-- Подключаем Algebrite для проверки математической эквивалентности -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/algebrite/1.4.0/algebrite.bundle-for-browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="test-container">
+    <div class="header">
+        <select id="variant-select" class="variant-select"></select>
+        <div id="stats">
+            <span id="score-display">Правильно: 0</span> | 
+            <span id="attempts-display">Списываний: 0</span>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <div id="task-counter">Задача 1 из 5</div>
+        <div id="math-display" class="math-q"></div>
+        
+        <div class="input-wrapper">
+            <!-- Поле ввода MathLive -->
+            <math-field id="user-answer" virtual-keyboard-policy="manual">
+                \placeholder{Введите ответ...}
+            </math-field>
+        </div>
+
+        <!-- Кнопка проверки и перехода -->
+        <button id="next-task-btn" class="main-action-btn">Следующее задание</button>
+
+        <!-- Сообщение об ошибке или успехе -->
+        <div id="feedback" class="feedback" style="display: none;"></div>
+    </div>
+
+    <!-- Кастомная виртуальная клавиатура -->
+    <div id="keyboard">
+        <div class="keyboard-row">
+            <button class="key" data-latex="7">7</button>
+            <button class="key" data-latex="8">8</button>
+            <button class="key" data-latex="9">9</button>
+            <button class="key" data-latex="+">+</button>
+            <button class="key" data-cmd="\frac{#?}{#?}">/</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key" data-latex="4">4</button>
+            <button class="key" data-latex="5">5</button>
+            <button class="key" data-latex="6">6</button>
+            <button class="key" data-latex="-">-</button>
+            <button class="key" data-latex="^2">x²</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key" data-latex="1">1</button>
+            <button class="key" data-latex="2">2</button>
+            <button class="key" data-latex="3">3</button>
+            <button class="key" data-latex="*">·</button>
+            <button class="key" data-latex="(">(</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key" data-latex="0">0</button>
+            <button class="key" data-latex=".">.</button>
+            <button class="key" id="backspace">⌫</button>
+            <button class="key" data-latex="=">=</button>
+            <button class="key" data-latex=")">)</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key" data-latex="x">x</button>
+            <button class="key" data-latex="y">y</button>
+            <button class="key" data-latex="\sin">sin</button>
+            <button class="key" data-latex="\cos">cos</button>
+            <button class="key" data-latex="\sqrt{#?}">√</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

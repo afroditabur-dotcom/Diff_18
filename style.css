@@ -1,0 +1,162 @@
+:root {
+    --primary: #4a90e2;
+    --success: #28a745;
+    --error: #dc3545;
+    --bg: #f4f7f6;
+    --text: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.test-container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.variant-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.task-card {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#task-counter {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.math-q {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    min-height: 50px;
+}
+
+/* Стили MathLive */
+math-field {
+    width: 100%;
+    font-size: 1.4rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 10px;
+}
+
+math-field:focus-within {
+    border-color: var(--primary);
+}
+
+/* Главная кнопка */
+.main-action-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.main-action-btn:hover {
+    background-color: #357abd;
+}
+
+.main-action-btn:active {
+    transform: scale(0.98);
+}
+
+.main-action-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Фидбек (сообщения) */
+.feedback {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Клавиатура */
+#keyboard {
+    display: grid;
+    gap: 8px;
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.key {
+    flex: 1;
+    min-width: 40px;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.1s;
+}
+
+.key:hover {
+    background: #eee;
+}
+
+.key:active {
+    background: #ddd;
+}
+
+#backspace {
+    background: #ffecec;
+}
